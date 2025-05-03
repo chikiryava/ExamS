@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamShvets", "ExamShvets.csproj", "{43732D1F-30B0-4D7D-81E2-07E15D6C17A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExamTests", "..\ExamTests\ExamTests.csproj", "{36CED792-E9E5-4DAE-B90B-C44E5EA21E22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43732D1F-30B0-4D7D-81E2-07E15D6C17A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43732D1F-30B0-4D7D-81E2-07E15D6C17A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43732D1F-30B0-4D7D-81E2-07E15D6C17A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43732D1F-30B0-4D7D-81E2-07E15D6C17A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CED792-E9E5-4DAE-B90B-C44E5EA21E22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CED792-E9E5-4DAE-B90B-C44E5EA21E22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CED792-E9E5-4DAE-B90B-C44E5EA21E22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CED792-E9E5-4DAE-B90B-C44E5EA21E22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C938A2D-C1B3-42B5-A3D6-B773F0E5E09E}
+	EndGlobalSection
+EndGlobal

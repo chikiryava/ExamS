@@ -1,0 +1,109 @@
+﻿<Window x:Class="ExamShvets.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExamShvets"
+        Icon="/images/Мастер пол.png"
+        mc:Ignorable="d"
+        FontFamily="Segoe UI"
+        Title="Партнёры" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Background="#F4E8D3" Grid.Row="0">
+            <Image Source="/images/Мастер пол.png" Grid.Row="0" Height="50" Margin="10,4" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="150" Height="30" Margin="25,0" Click="OpenAddForm" Background="#67BA80" Content="Добавить партнера">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#3D5754"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+                
+        </StackPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="10" Grid.Row="1">
+            <ListBox x:Name="PartnersListBox" HorizontalContentAlignment="Stretch" SelectionChanged="OpenUpdateForm">
+                <ListBox.Resources>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Border Background="Transparent">
+                                        <ContentPresenter/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.Resources>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+
+                <ListBox.ItemTemplate >
+                    <DataTemplate >
+                        <Border BorderBrush="Black" BorderThickness="1" CornerRadius="2" Margin="0,0,0,10" Padding="10">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock FontSize="16" FontWeight="SemiBold" >
+                                        <Run Text="{Binding Type}"/>
+                                        <Run Text=" | "/>
+                                        <Run Text="{Binding Name}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Margin="0,4,0,0">
+                                        <Run Text="Директор "/>
+                                        <Run Text="{Binding Position}"/>
+                                    </TextBlock>
+
+                                    <TextBlock Text="{Binding Phone}" />
+
+                                    <TextBlock>
+                                        <Run Text="Рейтинг: "/>
+                                        <Run Text="{Binding Rating}"/>
+                                    </TextBlock>
+                                </StackPanel>
+
+                                <TextBlock Grid.Column="1"
+                                           Text="{Binding Discount, StringFormat={}{0}%}"
+                                           VerticalAlignment="Center"
+                                           FontSize="16" FontWeight="SemiBold"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
+    </Grid>
+</Window>
